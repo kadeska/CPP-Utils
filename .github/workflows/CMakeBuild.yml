@@ -18,10 +18,19 @@ jobs:
         sudo apt-get update
         sudo apt-get install ninja-build
 
+    - name: Cache CMake Build Directory
+      uses: actions/cache@v3
+      with:
+        path: build
+        key: ${{ runner.os }}-cmake-build-${{ github.ref }}
+        restore-keys: |
+          ${{ runner.os }}-cmake-build-
+
     - name: Ensure clean build directory
+      if: always()
       run: |
-        if [ -d build ]; then
-          rm -rf build
+        if [ ! -d build ]; then
+          mkdir build
         fi
       shell: bash
 
