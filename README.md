@@ -14,7 +14,7 @@ One of the planned utilities is a console print utility, which will provide conv
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/CPP-Utils.git
+    git clone https://github.com/kadeska/CPP-Utils.git
     ```
 2. Include the desired header files or source files in your project.
 3. Refer to the documentation or comments within each file for usage details.
