@@ -15,9 +15,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Install CMake
-      uses: lukka/get-cmake@v3
-      with:
-        cmakeVersion: "3.25.0"
+      run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' -y
 
     - name: Install Ninja
       run: choco install ninja -y
