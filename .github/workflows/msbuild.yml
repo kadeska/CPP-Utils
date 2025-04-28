@@ -31,6 +31,9 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
+    - name: List Installed Windows SDKs
+      run: dir "C:\Program Files (x86)\Windows Kits\10\Lib"
+
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.PROJECT_FILE_PATH}}
