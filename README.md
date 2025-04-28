@@ -1,3 +1,4 @@
+[![CMake Build](https://github.com/kadeska/CPP-Utils/actions/workflows/CMakeBuild.yml/badge.svg)](https://github.com/kadeska/CPP-Utils/actions/workflows/CMakeBuild.yml)
 # C++ Utilities
 
 This repository is a collection of C++ utility programs and header files designed to simplify and enhance future projects. Each utility serves a specific purpose, ranging from common algorithms to reusable components.
