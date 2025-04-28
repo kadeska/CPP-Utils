@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "type": "cppdbg",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/output/${input:executableName}",
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": true,
+      "preLaunchTask": "build"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "executableName",
+      "description": "Enter the name of the executable to debug (e.g., main)"
+    }
+  ]
+}
