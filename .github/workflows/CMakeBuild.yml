@@ -26,11 +26,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-cmake-build-
 
-    - name: Ensure clean build directory
-      if: always()
+    - name: Remove build directory
       run: |
-        if [ ! -d build ]; then
-          mkdir build
+        if [ -d build ]; then
+          rm -rf build
         fi
       shell: bash
 
