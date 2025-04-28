@@ -8,20 +8,23 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Install CMake
-      run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' -y
+    - uses: actions/checkout@v4
 
     - name: Install Ninja
-      run: choco install ninja -y
+      run: sudo apt-get install ninja-build
 
-    - name: Configure with CMake
+    - name: Ensure clean build directory
+      run: |
+        if [ -d build ]; then
+          rm -rf build
+        fi
+      shell: bash
+
+    - name: Configure CMake
       run: cmake -S . -B build -G "Ninja"
 
-    - name: Build with CMake
+    - name: Build
       run: cmake --build build
