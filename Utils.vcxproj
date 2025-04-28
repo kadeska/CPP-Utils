@@ -30,6 +30,9 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+    <PlatformTarget>Win32</PlatformTarget>
+  </PropertyGroup>
   <PropertyGroup>
     <OutDir>$(SolutionDir)output\</OutDir>
     <TargetName>Utils</TargetName>
