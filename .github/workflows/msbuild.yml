@@ -2,41 +2,26 @@ name: MSBuild
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
-
-env:
-  PROJECT_FILE_PATH: Utils.vcxproj
-  BUILD_CONFIGURATION: Release
-
-permissions:
-  contents: read
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v1
 
-    - name: List Installed Windows SDKs
-      run: dir "C:\Program Files (x86)\Windows Kits\10\Lib"
+      - name: Install Windows SDK
+        run: |
+          choco install windows-sdk-10.0 --version=10.0.26100.0 -y
+          refreshenv
 
-    - name: Verify Environment Variables
-      run: |
-        echo "WindowsSdkDir: $env:WindowsSdkDir"
-        echo "WindowsSdkVersion: $env:WindowsSdkVersion"
-
-    - name: Verify Project File Exists
-      run: |
-        if (!(Test-Path "${{ github.workspace }}\${{ env.PROJECT_FILE_PATH }}")) {
-          throw "Project file not found: ${{ env.PROJECT_FILE_PATH }}"
-        }
-
-    - name: Build
-      working-directory: ${{ github.workspace }}
-      run: msbuild /m /p:Configuration=${{ env.BUILD_CONFIGURATION }} ${{ env.PROJECT_FILE_PATH }}
+      - name: Build with MSBuild
+        run: msbuild Utils.vcxproj /p:Configuration=Release
