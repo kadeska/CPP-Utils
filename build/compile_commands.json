@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/jh/Dev/CPP/Utils/build",
+  "command": "/usr/sbin/clang++ -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils -g -std=gnu++17 -o CMakeFiles/Utils.dir/main.cpp.o -c /home/jh/Dev/CPP/Utils/main.cpp",
+  "file": "/home/jh/Dev/CPP/Utils/main.cpp",
+  "output": "CMakeFiles/Utils.dir/main.cpp.o"
+},
+{
+  "directory": "/home/jh/Dev/CPP/Utils/build",
+  "command": "/usr/sbin/clang++ -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils -g -std=gnu++17 -o CMakeFiles/Utils.dir/customLogging.cpp.o -c /home/jh/Dev/CPP/Utils/customLogging.cpp",
+  "file": "/home/jh/Dev/CPP/Utils/customLogging.cpp",
+  "output": "CMakeFiles/Utils.dir/customLogging.cpp.o"
+},
+{
+  "directory": "/home/jh/Dev/CPP/Utils/build",
+  "command": "/usr/sbin/clang++ -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils -g -std=gnu++17 -o CMakeFiles/Utils.dir/graphics/window/window.cpp.o -c /home/jh/Dev/CPP/Utils/graphics/window/window.cpp",
+  "file": "/home/jh/Dev/CPP/Utils/graphics/window/window.cpp",
+  "output": "CMakeFiles/Utils.dir/graphics/window/window.cpp.o"
+},
+{
+  "directory": "/home/jh/Dev/CPP/Utils/build",
+  "command": "/usr/sbin/clang -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils -g -o CMakeFiles/Utils.dir/glad.c.o -c /home/jh/Dev/CPP/Utils/glad.c",
+  "file": "/home/jh/Dev/CPP/Utils/glad.c",
+  "output": "CMakeFiles/Utils.dir/glad.c.o"
+}
+]

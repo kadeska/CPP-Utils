@@ -1,0 +1,13 @@
+{
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.configureOnOpen": true,
+    "cmake.debugConfig": {
+        "stopAtEntry": true,
+        "MIMode": "gdb"
+    },
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "C_Cpp.errorSquiggles": "enabled",
+    "editor.formatOnSave": true
+}

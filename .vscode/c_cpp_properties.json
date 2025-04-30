@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include_headers",
+                "${workspaceFolder}/include_headers/3rdparty",
+                "${workspaceFolder}/include_headers/3rdparty/glad"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/sbin/clang",
+            "cppStandard": "c++20",
+            "cStandard": "c17",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compilerArgs": [
+                "-Wall",
+                "-Wextra"
+            ]
+        }
+    ],
+    "version": 4
+}
