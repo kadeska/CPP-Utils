@@ -8,9 +8,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Find OpenGL package
 find_package(OpenGL REQUIRED)
 
-# Disable Wayland in CI (like GitHub Actions), enable otherwise
+# Detect if we're running in GitHub Actions (CI)
 if(DEFINED ENV{CI})
-    set(GLFW_USE_WAYLAND OFF CACHE BOOL "Disable Wayland in CI" FORCE)
+    # Disable Wayland, enable X11 on CI runners
+    set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "Disable Wayland" FORCE)
+    set(GLFW_BUILD_X11 ON CACHE BOOL "Enable X11" FORCE)
 endif()
 
 # ----------------------------
