@@ -5,7 +5,7 @@ project(Utils VERSION 1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Find OpenGL package
+# Dependencies
 find_package(OpenGL REQUIRED)
 
 # Detect if we're running in GitHub Actions (CI)
@@ -33,10 +33,26 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "Disable GLFW examples" FORCE)
 FetchContent_MakeAvailable(glfw)
 # ----------------------------
 
-# Add glad.c as a source file
+# Use FetchContent to get GLFW
+include(FetchContent)
+
+FetchContent_Declare(
+  glfw
+  GIT_REPOSITORY https://github.com/glfw/glfw.git
+  GIT_TAG latest
+)
+
+# Disable unnecessary parts of GLFW
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "GLFW Docs" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "GLFW Tests" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "GLFW Examples" FORCE)
+
+FetchContent_MakeAvailable(glfw)
+
+# Add glad
 set(GLAD_SRC ${CMAKE_SOURCE_DIR}/glad.c)
 
-# Add the executable
+# Define the executable
 add_executable(Utils 
     main.cpp 
     customLogging.cpp 
@@ -55,6 +71,6 @@ target_include_directories(Utils PRIVATE
 # Link against OpenGL and GLFW (which provides its own include dirs)
 target_link_libraries(Utils PRIVATE 
     OpenGL::GL 
-    glfw
+    glfw 
     dl
 )

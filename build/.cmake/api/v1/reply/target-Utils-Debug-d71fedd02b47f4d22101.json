@@ -20,7 +20,8 @@
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"/usr/share/cmake/Modules/FindOpenGL.cmake"
+			"/usr/share/cmake/Modules/FindOpenGL.cmake",
+			"build/_deps/glfw-src/src/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -30,13 +31,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 15,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 31,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -62,9 +63,18 @@
 				"parent" : 4
 			},
 			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 225,
+				"parent" : 7
+			},
+			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 24,
+				"line" : 40,
 				"parent" : 0
 			}
 		]
@@ -81,16 +91,20 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/jh/Dev/CPP/Utils/include_headers"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/jh/Dev/CPP/Utils/include_headers/3rdparty"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/jh/Dev/CPP/Utils"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/jh/Dev/CPP/Utils/build/_deps/glfw-src/include"
 				}
 			],
 			"language" : "CXX",
@@ -120,16 +134,20 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/jh/Dev/CPP/Utils/include_headers"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/jh/Dev/CPP/Utils/include_headers/3rdparty"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/jh/Dev/CPP/Utils"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/jh/Dev/CPP/Utils/build/_deps/glfw-src/include"
 				}
 			],
 			"language" : "C",
@@ -137,6 +155,13 @@
 			[
 				4
 			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "glfw::@fa9f4482d3a2b070f206"
 		}
 	],
 	"id" : "Utils::@6890427a1f51a3e7e1df",
@@ -154,7 +179,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-lglfw",
+				"fragment" : "_deps/glfw-build/src/libglfw3.a",
 				"role" : "libraries"
 			},
 			{
@@ -170,6 +195,20 @@
 			{
 				"backtrace" : 6,
 				"fragment" : "/usr/lib64/libOpenGL.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib64/librt.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-ldl",
 				"role" : "libraries"
 			}
 		],
