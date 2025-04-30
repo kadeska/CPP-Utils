@@ -8,7 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Find OpenGL package
 find_package(OpenGL REQUIRED)
 
-set(GLFW_USE_WAYLAND OFF CACHE BOOL "Disable Wayland support in GLFW" FORCE)
+# Disable Wayland in CI (like GitHub Actions), enable otherwise
+if(DEFINED ENV{CI})
+    set(GLFW_USE_WAYLAND OFF CACHE BOOL "Disable Wayland in CI" FORCE)
+endif()
 
 # ----------------------------
 # Fetch GLFW using FetchContent
