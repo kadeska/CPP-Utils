@@ -8,6 +8,24 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Find OpenGL package
 find_package(OpenGL REQUIRED)
 
+# ----------------------------
+# Fetch GLFW using FetchContent
+include(FetchContent)
+
+FetchContent_Declare(
+  glfw
+  GIT_REPOSITORY https://github.com/glfw/glfw.git
+  GIT_TAG latest
+)
+
+# Disable tests/docs/examples
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "Disable GLFW docs" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "Disable GLFW tests" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "Disable GLFW examples" FORCE)
+
+FetchContent_MakeAvailable(glfw)
+# ----------------------------
+
 # Add glad.c as a source file
 set(GLAD_SRC ${CMAKE_SOURCE_DIR}/glad.c)
 
@@ -20,14 +38,14 @@ add_executable(Utils
     ${GLAD_SRC}
 )
 
-# Include directories
+# Include directories for your own project (NOT for GLFW!)
 target_include_directories(Utils PRIVATE 
     include_headers
     include_headers/3rdparty
     ${CMAKE_SOURCE_DIR}
 )
 
-# Link libraries
+# Link against OpenGL and GLFW (which provides its own include dirs)
 target_link_libraries(Utils PRIVATE 
     OpenGL::GL 
     glfw
