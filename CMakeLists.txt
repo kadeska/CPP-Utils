@@ -22,8 +22,8 @@ add_executable(Utils
 
 # Include directories
 target_include_directories(Utils PRIVATE 
-    ${CMAKE_SOURCE_DIR}include_headers
-    ${CMAKE_SOURCE_DIR}include_headers/3rdparty
+    include_headers
+    include_headers/3rdparty
     ${CMAKE_SOURCE_DIR}
 )
 
