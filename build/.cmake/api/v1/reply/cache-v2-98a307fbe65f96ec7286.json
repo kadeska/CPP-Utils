@@ -1731,7 +1731,7 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Build the GLFW documentation"
+					"value" : "GLFW Docs"
 				}
 			],
 			"type" : "BOOL",
@@ -1743,7 +1743,7 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Build the GLFW example programs"
+					"value" : "GLFW Examples"
 				}
 			],
 			"type" : "BOOL",
@@ -1755,7 +1755,7 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Build the GLFW test programs"
+					"value" : "GLFW Tests"
 				}
 			],
 			"type" : "BOOL",

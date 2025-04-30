@@ -308,13 +308,13 @@ GIT_EXECUTABLE:FILEPATH=/usr/sbin/git
 //Value Computed by CMake
 GLFW_BINARY_DIR:STATIC=/home/jh/Dev/CPP/Utils/build/_deps/glfw-build
 
-//Build the GLFW documentation
+//GLFW Docs
 GLFW_BUILD_DOCS:BOOL=OFF
 
-//Build the GLFW example programs
+//GLFW Examples
 GLFW_BUILD_EXAMPLES:BOOL=OFF
 
-//Build the GLFW test programs
+//GLFW Tests
 GLFW_BUILD_TESTS:BOOL=OFF
 
 //Build support for Wayland

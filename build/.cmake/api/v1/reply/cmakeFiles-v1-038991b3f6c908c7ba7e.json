@@ -257,6 +257,16 @@
 			"path" : "/usr/share/cmake/Modules/FetchContent/CMakeLists.cmake.in"
 		},
 		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FetchContent.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake"
+		},
+		{
 			"isGenerated" : true,
 			"path" : "build/_deps/glfw-src/CMakeLists.txt"
 		},
