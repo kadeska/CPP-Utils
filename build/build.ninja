@@ -52,35 +52,35 @@ build cmake_object_order_depends_target_Utils: phony || .
 build CMakeFiles/Utils.dir/main.cpp.o: CXX_COMPILER__Utils_unscanned_Debug /home/jh/Dev/CPP/Utils/main.cpp || cmake_object_order_depends_target_Utils
   DEP_FILE = CMakeFiles/Utils.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils
+  INCLUDES = -I/home/jh/Dev/CPP/Utilsinclude_headers -I/home/jh/Dev/CPP/Utilsinclude_headers/3rdparty -I/home/jh/Dev/CPP/Utils
   OBJECT_DIR = CMakeFiles/Utils.dir
   OBJECT_FILE_DIR = CMakeFiles/Utils.dir
 
 build CMakeFiles/Utils.dir/customLogging.cpp.o: CXX_COMPILER__Utils_unscanned_Debug /home/jh/Dev/CPP/Utils/customLogging.cpp || cmake_object_order_depends_target_Utils
   DEP_FILE = CMakeFiles/Utils.dir/customLogging.cpp.o.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils
+  INCLUDES = -I/home/jh/Dev/CPP/Utilsinclude_headers -I/home/jh/Dev/CPP/Utilsinclude_headers/3rdparty -I/home/jh/Dev/CPP/Utils
   OBJECT_DIR = CMakeFiles/Utils.dir
   OBJECT_FILE_DIR = CMakeFiles/Utils.dir
 
 build CMakeFiles/Utils.dir/graphics/window/window.cpp.o: CXX_COMPILER__Utils_unscanned_Debug /home/jh/Dev/CPP/Utils/graphics/window/window.cpp || cmake_object_order_depends_target_Utils
   DEP_FILE = CMakeFiles/Utils.dir/graphics/window/window.cpp.o.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils
+  INCLUDES = -I/home/jh/Dev/CPP/Utilsinclude_headers -I/home/jh/Dev/CPP/Utilsinclude_headers/3rdparty -I/home/jh/Dev/CPP/Utils
   OBJECT_DIR = CMakeFiles/Utils.dir
   OBJECT_FILE_DIR = CMakeFiles/Utils.dir/graphics/window
 
 build CMakeFiles/Utils.dir/graphics/rendering/opengl/glrenderer.cpp.o: CXX_COMPILER__Utils_unscanned_Debug /home/jh/Dev/CPP/Utils/graphics/rendering/opengl/glrenderer.cpp || cmake_object_order_depends_target_Utils
   DEP_FILE = CMakeFiles/Utils.dir/graphics/rendering/opengl/glrenderer.cpp.o.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils
+  INCLUDES = -I/home/jh/Dev/CPP/Utilsinclude_headers -I/home/jh/Dev/CPP/Utilsinclude_headers/3rdparty -I/home/jh/Dev/CPP/Utils
   OBJECT_DIR = CMakeFiles/Utils.dir
   OBJECT_FILE_DIR = CMakeFiles/Utils.dir/graphics/rendering/opengl
 
 build CMakeFiles/Utils.dir/glad.c.o: C_COMPILER__Utils_unscanned_Debug /home/jh/Dev/CPP/Utils/glad.c || cmake_object_order_depends_target_Utils
   DEP_FILE = CMakeFiles/Utils.dir/glad.c.o.d
   FLAGS = -g
-  INCLUDES = -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils
+  INCLUDES = -I/home/jh/Dev/CPP/Utilsinclude_headers -I/home/jh/Dev/CPP/Utilsinclude_headers/3rdparty -I/home/jh/Dev/CPP/Utils
   OBJECT_DIR = CMakeFiles/Utils.dir
   OBJECT_FILE_DIR = CMakeFiles/Utils.dir
 
