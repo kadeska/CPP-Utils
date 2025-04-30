@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Find OpenGL package
 find_package(OpenGL REQUIRED)
 
+set(GLFW_USE_WAYLAND OFF CACHE BOOL "Disable Wayland support in GLFW" FORCE)
+
 # ----------------------------
 # Fetch GLFW using FetchContent
 include(FetchContent)
