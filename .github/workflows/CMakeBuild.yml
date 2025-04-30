@@ -13,10 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install Ninja
+    - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install ninja-build
+        sudo apt-get install -y ninja-build libgl1-mesa-dev xorg-dev
 
     - name: Cache CMake Build Directory
       uses: actions/cache@v3
