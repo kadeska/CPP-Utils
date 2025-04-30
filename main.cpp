@@ -1,6 +1,7 @@
 #include "include_headers/customLogging.hpp"
 // #include "include_headers/3rdparty/glfw/glfw3.h"
 #include "include_headers/window.hpp"
+#include "include_headers/glrenderer.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -21,8 +22,9 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    createWindow(800, 600, "OpenGL Window");
-    draw();
+    renderWindow(createWindow(800, 600, "OpenGL Window"));
+    // createWindow(800, 600, "OpenGL Window");
+    // draw();
 
     return 0;
 }

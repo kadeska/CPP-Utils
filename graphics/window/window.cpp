@@ -27,14 +27,14 @@ int initialize()
     return 0;
 }
 
-int createWindow(int width, int height, std::string name)
+GLFWwindow *createWindow(int width, int height, std::string name)
 {
     window = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
     if (window == NULL)
     {
         CustomLogging::log("Failed to create GLFW window", CustomLogging::LogLevel::ERROR, true);
         glfwTerminate();
-        return -1;
+        return nullptr;
     }
     glfwMakeContextCurrent(window);
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -42,11 +42,11 @@ int createWindow(int width, int height, std::string name)
         CustomLogging::log("Failed to initialize GLAD", CustomLogging::LogLevel::ERROR, true);
         glfwDestroyWindow(window);
         glfwTerminate();
-        return -1;
+        return window;
     }
     glViewport(0, 0, width, height);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    return 0;
+    return window;
 }
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height)
@@ -54,13 +54,8 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
     glViewport(0, 0, width, height);
 }
 
-int draw()
+void processInput(GLFWwindow *window)
 {
-    while (!glfwWindowShouldClose(window))
-    {
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-    glfwTerminate();
-    return 0;
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
 }

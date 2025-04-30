@@ -8,8 +8,8 @@
 extern GLFWwindow *window;
 
 int initialize();
-int createWindow(int width, int height, std::string name);
+GLFWwindow *createWindow(int width, int height, std::string name);
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
-int draw();
+void processInput(GLFWwindow *window);
 
 #endif // WINDOW_HPP
