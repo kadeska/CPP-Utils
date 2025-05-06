@@ -1,5 +1,4 @@
 #include "include_headers/customLogging.hpp"
-// #include "include_headers/3rdparty/glfw/glfw3.h"
 #include "include_headers/window.hpp"
 #include "include_headers/glrenderer.hpp"
 

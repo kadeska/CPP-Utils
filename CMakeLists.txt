@@ -58,6 +58,7 @@ add_executable(Utils
     customLogging.cpp 
     graphics/window/window.cpp 
     graphics/rendering/opengl/glrenderer.cpp
+    graphics/rendering/opengl/program.cpp
     ${GLAD_SRC}
 )
 

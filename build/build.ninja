@@ -77,6 +77,13 @@ build CMakeFiles/Utils.dir/graphics/rendering/opengl/glrenderer.cpp.o: CXX_COMPI
   OBJECT_DIR = CMakeFiles/Utils.dir
   OBJECT_FILE_DIR = CMakeFiles/Utils.dir/graphics/rendering/opengl
 
+build CMakeFiles/Utils.dir/graphics/rendering/opengl/program.cpp.o: CXX_COMPILER__Utils_unscanned_Debug /home/jh/Dev/CPP/Utils/graphics/rendering/opengl/program.cpp || cmake_object_order_depends_target_Utils
+  DEP_FILE = CMakeFiles/Utils.dir/graphics/rendering/opengl/program.cpp.o.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I/home/jh/Dev/CPP/Utils/include_headers -I/home/jh/Dev/CPP/Utils/include_headers/3rdparty -I/home/jh/Dev/CPP/Utils -I/home/jh/Dev/CPP/Utils/build/_deps/glfw-src/include
+  OBJECT_DIR = CMakeFiles/Utils.dir
+  OBJECT_FILE_DIR = CMakeFiles/Utils.dir/graphics/rendering/opengl
+
 build CMakeFiles/Utils.dir/glad.c.o: C_COMPILER__Utils_unscanned_Debug /home/jh/Dev/CPP/Utils/glad.c || cmake_object_order_depends_target_Utils
   DEP_FILE = CMakeFiles/Utils.dir/glad.c.o.d
   FLAGS = -g
@@ -92,7 +99,7 @@ build CMakeFiles/Utils.dir/glad.c.o: C_COMPILER__Utils_unscanned_Debug /home/jh/
 #############################################
 # Link the executable Utils
 
-build Utils: CXX_EXECUTABLE_LINKER__Utils_Debug CMakeFiles/Utils.dir/main.cpp.o CMakeFiles/Utils.dir/customLogging.cpp.o CMakeFiles/Utils.dir/graphics/window/window.cpp.o CMakeFiles/Utils.dir/graphics/rendering/opengl/glrenderer.cpp.o CMakeFiles/Utils.dir/glad.c.o | _deps/glfw-build/src/libglfw3.a /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so /usr/lib64/librt.a /usr/lib64/libm.so || _deps/glfw-build/src/libglfw3.a
+build Utils: CXX_EXECUTABLE_LINKER__Utils_Debug CMakeFiles/Utils.dir/main.cpp.o CMakeFiles/Utils.dir/customLogging.cpp.o CMakeFiles/Utils.dir/graphics/window/window.cpp.o CMakeFiles/Utils.dir/graphics/rendering/opengl/glrenderer.cpp.o CMakeFiles/Utils.dir/graphics/rendering/opengl/program.cpp.o CMakeFiles/Utils.dir/glad.c.o | _deps/glfw-build/src/libglfw3.a /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so /usr/lib64/librt.a /usr/lib64/libm.so || _deps/glfw-build/src/libglfw3.a
   DEP_FILE = CMakeFiles/Utils.dir/link.d
   FLAGS = -g
   LINK_FLAGS = -Xlinker --dependency-file=CMakeFiles/Utils.dir/link.d
@@ -568,7 +575,7 @@ build _deps/glfw-build/src/install/strip: phony _deps/glfw-build/src/CMakeFiles/
 # Custom command for _deps/glfw-build/src/wayland-client-protocol.h
 
 build _deps/glfw-build/src/wayland-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/wayland-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/wayland.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/wayland.xml wayland-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/wayland.xml wayland-client-protocol.h
   DESC = Generating wayland-client-protocol.h
   restat = 1
 
@@ -577,7 +584,7 @@ build _deps/glfw-build/src/wayland-client-protocol.h | ${cmake_ninja_workdir}_de
 # Custom command for _deps/glfw-build/src/wayland-client-protocol-code.h
 
 build _deps/glfw-build/src/wayland-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/wayland-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/wayland.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/wayland.xml wayland-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/wayland.xml wayland-client-protocol-code.h
   DESC = Generating wayland-client-protocol-code.h
   restat = 1
 
@@ -586,7 +593,7 @@ build _deps/glfw-build/src/wayland-client-protocol-code.h | ${cmake_ninja_workdi
 # Custom command for _deps/glfw-build/src/viewporter-client-protocol.h
 
 build _deps/glfw-build/src/viewporter-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/viewporter-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/viewporter.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/viewporter.xml viewporter-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/viewporter.xml viewporter-client-protocol.h
   DESC = Generating viewporter-client-protocol.h
   restat = 1
 
@@ -595,7 +602,7 @@ build _deps/glfw-build/src/viewporter-client-protocol.h | ${cmake_ninja_workdir}
 # Custom command for _deps/glfw-build/src/viewporter-client-protocol-code.h
 
 build _deps/glfw-build/src/viewporter-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/viewporter-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/viewporter.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/viewporter.xml viewporter-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/viewporter.xml viewporter-client-protocol-code.h
   DESC = Generating viewporter-client-protocol-code.h
   restat = 1
 
@@ -604,7 +611,7 @@ build _deps/glfw-build/src/viewporter-client-protocol-code.h | ${cmake_ninja_wor
 # Custom command for _deps/glfw-build/src/xdg-shell-client-protocol.h
 
 build _deps/glfw-build/src/xdg-shell-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/xdg-shell-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/xdg-shell.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-shell.xml xdg-shell-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-shell.xml xdg-shell-client-protocol.h
   DESC = Generating xdg-shell-client-protocol.h
   restat = 1
 
@@ -613,7 +620,7 @@ build _deps/glfw-build/src/xdg-shell-client-protocol.h | ${cmake_ninja_workdir}_
 # Custom command for _deps/glfw-build/src/xdg-shell-client-protocol-code.h
 
 build _deps/glfw-build/src/xdg-shell-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/xdg-shell-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/xdg-shell.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-shell.xml xdg-shell-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-shell.xml xdg-shell-client-protocol-code.h
   DESC = Generating xdg-shell-client-protocol-code.h
   restat = 1
 
@@ -622,7 +629,7 @@ build _deps/glfw-build/src/xdg-shell-client-protocol-code.h | ${cmake_ninja_work
 # Custom command for _deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol.h
 
 build _deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/idle-inhibit-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/idle-inhibit-unstable-v1.xml idle-inhibit-unstable-v1-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/idle-inhibit-unstable-v1.xml idle-inhibit-unstable-v1-client-protocol.h
   DESC = Generating idle-inhibit-unstable-v1-client-protocol.h
   restat = 1
 
@@ -631,7 +638,7 @@ build _deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol.h | ${cmake_
 # Custom command for _deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol-code.h
 
 build _deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/idle-inhibit-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/idle-inhibit-unstable-v1.xml idle-inhibit-unstable-v1-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/idle-inhibit-unstable-v1.xml idle-inhibit-unstable-v1-client-protocol-code.h
   DESC = Generating idle-inhibit-unstable-v1-client-protocol-code.h
   restat = 1
 
@@ -640,7 +647,7 @@ build _deps/glfw-build/src/idle-inhibit-unstable-v1-client-protocol-code.h | ${c
 # Custom command for _deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol.h
 
 build _deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/pointer-constraints-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/pointer-constraints-unstable-v1.xml pointer-constraints-unstable-v1-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/pointer-constraints-unstable-v1.xml pointer-constraints-unstable-v1-client-protocol.h
   DESC = Generating pointer-constraints-unstable-v1-client-protocol.h
   restat = 1
 
@@ -649,7 +656,7 @@ build _deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol.h | $
 # Custom command for _deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol-code.h
 
 build _deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/pointer-constraints-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/pointer-constraints-unstable-v1.xml pointer-constraints-unstable-v1-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/pointer-constraints-unstable-v1.xml pointer-constraints-unstable-v1-client-protocol-code.h
   DESC = Generating pointer-constraints-unstable-v1-client-protocol-code.h
   restat = 1
 
@@ -658,7 +665,7 @@ build _deps/glfw-build/src/pointer-constraints-unstable-v1-client-protocol-code.
 # Custom command for _deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol.h
 
 build _deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/relative-pointer-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/relative-pointer-unstable-v1.xml relative-pointer-unstable-v1-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/relative-pointer-unstable-v1.xml relative-pointer-unstable-v1-client-protocol.h
   DESC = Generating relative-pointer-unstable-v1-client-protocol.h
   restat = 1
 
@@ -667,7 +674,7 @@ build _deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol.h | ${cm
 # Custom command for _deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol-code.h
 
 build _deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/relative-pointer-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/relative-pointer-unstable-v1.xml relative-pointer-unstable-v1-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/relative-pointer-unstable-v1.xml relative-pointer-unstable-v1-client-protocol-code.h
   DESC = Generating relative-pointer-unstable-v1-client-protocol-code.h
   restat = 1
 
@@ -676,7 +683,7 @@ build _deps/glfw-build/src/relative-pointer-unstable-v1-client-protocol-code.h |
 # Custom command for _deps/glfw-build/src/fractional-scale-v1-client-protocol.h
 
 build _deps/glfw-build/src/fractional-scale-v1-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/fractional-scale-v1-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/fractional-scale-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/fractional-scale-v1.xml fractional-scale-v1-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/fractional-scale-v1.xml fractional-scale-v1-client-protocol.h
   DESC = Generating fractional-scale-v1-client-protocol.h
   restat = 1
 
@@ -685,7 +692,7 @@ build _deps/glfw-build/src/fractional-scale-v1-client-protocol.h | ${cmake_ninja
 # Custom command for _deps/glfw-build/src/fractional-scale-v1-client-protocol-code.h
 
 build _deps/glfw-build/src/fractional-scale-v1-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/fractional-scale-v1-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/fractional-scale-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/fractional-scale-v1.xml fractional-scale-v1-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/fractional-scale-v1.xml fractional-scale-v1-client-protocol-code.h
   DESC = Generating fractional-scale-v1-client-protocol-code.h
   restat = 1
 
@@ -694,7 +701,7 @@ build _deps/glfw-build/src/fractional-scale-v1-client-protocol-code.h | ${cmake_
 # Custom command for _deps/glfw-build/src/xdg-activation-v1-client-protocol.h
 
 build _deps/glfw-build/src/xdg-activation-v1-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/xdg-activation-v1-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/xdg-activation-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-activation-v1.xml xdg-activation-v1-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-activation-v1.xml xdg-activation-v1-client-protocol.h
   DESC = Generating xdg-activation-v1-client-protocol.h
   restat = 1
 
@@ -703,7 +710,7 @@ build _deps/glfw-build/src/xdg-activation-v1-client-protocol.h | ${cmake_ninja_w
 # Custom command for _deps/glfw-build/src/xdg-activation-v1-client-protocol-code.h
 
 build _deps/glfw-build/src/xdg-activation-v1-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/xdg-activation-v1-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/xdg-activation-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-activation-v1.xml xdg-activation-v1-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-activation-v1.xml xdg-activation-v1-client-protocol-code.h
   DESC = Generating xdg-activation-v1-client-protocol-code.h
   restat = 1
 
@@ -712,7 +719,7 @@ build _deps/glfw-build/src/xdg-activation-v1-client-protocol-code.h | ${cmake_ni
 # Custom command for _deps/glfw-build/src/xdg-decoration-unstable-v1-client-protocol.h
 
 build _deps/glfw-build/src/xdg-decoration-unstable-v1-client-protocol.h | ${cmake_ninja_workdir}_deps/glfw-build/src/xdg-decoration-unstable-v1-client-protocol.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/xdg-decoration-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-decoration-unstable-v1.xml xdg-decoration-unstable-v1-client-protocol.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner client-header /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-decoration-unstable-v1.xml xdg-decoration-unstable-v1-client-protocol.h
   DESC = Generating xdg-decoration-unstable-v1-client-protocol.h
   restat = 1
 
@@ -721,7 +728,7 @@ build _deps/glfw-build/src/xdg-decoration-unstable-v1-client-protocol.h | ${cmak
 # Custom command for _deps/glfw-build/src/xdg-decoration-unstable-v1-client-protocol-code.h
 
 build _deps/glfw-build/src/xdg-decoration-unstable-v1-client-protocol-code.h | ${cmake_ninja_workdir}_deps/glfw-build/src/xdg-decoration-unstable-v1-client-protocol-code.h: CUSTOM_COMMAND _deps/glfw-src/deps/wayland/xdg-decoration-unstable-v1.xml
-  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/sbin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-decoration-unstable-v1.xml xdg-decoration-unstable-v1-client-protocol-code.h
+  COMMAND = cd /home/jh/Dev/CPP/Utils/build/_deps/glfw-build/src && /usr/bin/wayland-scanner private-code /home/jh/Dev/CPP/Utils/build/_deps/glfw-src/deps/wayland/xdg-decoration-unstable-v1.xml xdg-decoration-unstable-v1-client-protocol-code.h
   DESC = Generating xdg-decoration-unstable-v1-client-protocol-code.h
   restat = 1
 

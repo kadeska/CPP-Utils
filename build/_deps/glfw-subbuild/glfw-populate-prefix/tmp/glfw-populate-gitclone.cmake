@@ -35,7 +35,7 @@ set(error_code 1)
 set(number_of_tries 0)
 while(error_code AND number_of_tries LESS 3)
   execute_process(
-    COMMAND "/usr/sbin/git"
+    COMMAND "/usr/bin/git"
             clone --no-checkout --config "advice.detachedHead=false" "https://github.com/glfw/glfw.git" "glfw-src"
     WORKING_DIRECTORY "/home/jh/Dev/CPP/Utils/build/_deps"
     RESULT_VARIABLE error_code
@@ -51,7 +51,7 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "/usr/sbin/git"
+  COMMAND "/usr/bin/git"
           checkout "latest" --
   WORKING_DIRECTORY "/home/jh/Dev/CPP/Utils/build/_deps/glfw-src"
   RESULT_VARIABLE error_code
@@ -64,7 +64,7 @@ endif()
 set(init_submodules TRUE)
 if(init_submodules)
   execute_process(
-    COMMAND "/usr/sbin/git" 
+    COMMAND "/usr/bin/git" 
             submodule update --recursive --init 
     WORKING_DIRECTORY "/home/jh/Dev/CPP/Utils/build/_deps/glfw-src"
     RESULT_VARIABLE error_code

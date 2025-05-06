@@ -51,7 +51,7 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
 				}
 			],
 			"type" : "STRING",
@@ -151,10 +151,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/sbin/clang++"
 		},
 		{
@@ -295,10 +295,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/sbin/clang"
 		},
 		{
@@ -1031,7 +1031,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/sbin/ninja-build"
+			"value" : "/usr/bin/ninja-build"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1559,7 +1559,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/sbin/uname"
+			"value" : "/usr/bin/uname"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1671,7 +1671,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/sbin/pkg-config][v2.3.0()]"
+			"value" : "[/usr/bin/pkg-config][v2.3.0()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1711,7 +1711,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/sbin/git"
+			"value" : "/usr/bin/git"
 		},
 		{
 			"name" : "GLFW_BINARY_DIR",
@@ -2123,7 +2123,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/sbin/pkg-config"
+			"value" : "/usr/bin/pkg-config"
 		},
 		{
 			"name" : "RT_LIBRARY",
@@ -2187,7 +2187,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/sbin/wayland-scanner"
+			"value" : "/usr/bin/wayland-scanner"
 		},
 		{
 			"name" : "Wayland_CFLAGS",

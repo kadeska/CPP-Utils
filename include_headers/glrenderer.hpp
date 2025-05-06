@@ -1,4 +1,6 @@
+#pragma once
+
 #include "customLogging.hpp"
 #include "window.hpp"
 
-void renderWindow(GLFWwindow* window);
+void renderWindow(GLFWwindow *window);
