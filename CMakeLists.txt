@@ -5,6 +5,8 @@ project(Utils VERSION 1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+
+
 # Dependencies
 find_package(OpenGL REQUIRED)
 
@@ -74,4 +76,12 @@ target_link_libraries(Utils PRIVATE
     OpenGL::GL 
     glfw 
     dl
+)
+
+
+# Copy shader files to build directory
+add_custom_command(TARGET Utils POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/graphics/shaders
+    ${CMAKE_BINARY_DIR}/shaders
 )

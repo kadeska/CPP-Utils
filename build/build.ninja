@@ -105,7 +105,7 @@ build Utils: CXX_EXECUTABLE_LINKER__Utils_Debug CMakeFiles/Utils.dir/main.cpp.o 
   LINK_FLAGS = -Xlinker --dependency-file=CMakeFiles/Utils.dir/link.d
   LINK_LIBRARIES = _deps/glfw-build/src/libglfw3.a  -ldl  /usr/lib64/libGLX.so  /usr/lib64/libOpenGL.so  /usr/lib64/librt.a  -lm  -ldl
   OBJECT_DIR = CMakeFiles/Utils.dir
-  POST_BUILD = :
+  POST_BUILD = cd /home/jh/Dev/CPP/Utils/build && /usr/bin/cmake -E copy_directory /home/jh/Dev/CPP/Utils/graphics/shaders /home/jh/Dev/CPP/Utils/build/shaders
   PRE_LINK = :
   TARGET_FILE = Utils
   TARGET_PDB = Utils.dbg

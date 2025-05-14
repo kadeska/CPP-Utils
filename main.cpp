@@ -15,6 +15,8 @@ int main(int argc, char *argv[])
 
     // testing the window
 
+    // check if window iniialization is successful
+    // this must be done before calling createWindow.
     if (initialize() == -1)
     {
         CustomLogging::log("Failed to initialize GLFW", CustomLogging::LogLevel::ERROR, true);
@@ -24,6 +26,8 @@ int main(int argc, char *argv[])
     renderWindow(createWindow(800, 600, "OpenGL Window"));
     // createWindow(800, 600, "OpenGL Window");
     // draw();
+
+   
 
     return 0;
 }
