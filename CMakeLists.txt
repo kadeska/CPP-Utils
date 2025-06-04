@@ -5,6 +5,9 @@ project(Utils VERSION 1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Always disable Wayland unless you want to build with it
+set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "Disable Wayland" FORCE)
+set(GLFW_BUILD_X11 ON CACHE BOOL "Enable X11" FORCE)
 
 
 # Dependencies
@@ -16,6 +19,7 @@ if(DEFINED ENV{CI})
     set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "Disable Wayland" FORCE)
     set(GLFW_BUILD_X11 ON CACHE BOOL "Enable X11" FORCE)
 endif()
+
 
 # ----------------------------
 # Fetch GLFW using FetchContent
