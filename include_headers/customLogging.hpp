@@ -64,6 +64,8 @@ namespace CustomLogging
      */
     LogLevel parseLogLevel(int argc, char *argv[]);
 
+    LogLevel parseArguments(int argc, char *argv[]);
+
     /**
      * @brief Prints the command line arguments.
      * @param argc The number of command line arguments.

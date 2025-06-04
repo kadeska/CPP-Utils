@@ -57,6 +57,23 @@ namespace CustomLogging
         }
         return progLogLevel;
     }
+    LogLevel parseArguments(int argc, char *argv[])
+    {
+        if (argc > 1)
+        {
+            // int logLevel = 0;
+            // std::string arg1 = argv[1];
+            for (int i = 1; i < argc; ++i)
+            {
+                std::string arg = argv[i];
+                if (arg == "test")
+                {
+                    log("Test argument received", LogLevel::DEBUG, true);
+                }
+            }
+        }
+        return progLogLevel;
+    }
 
     void printCommandLineArguments(int argc, char *argv[])
     {

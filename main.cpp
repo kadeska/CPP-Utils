@@ -6,6 +6,7 @@ int main(int argc, char *argv[])
 {
     CustomLogging::printCommandLineArguments(argc, argv);
     CustomLogging::parseLogLevel(argc, argv);
+    CustomLogging::parseArguments(argc, argv);
     // CustomLogging::progLogLevel = CustomLogging::LogLevel::DEBUG;
     // Example usage of the CustomLogging library
     CustomLogging::log("This is an info message.");
@@ -27,7 +28,5 @@ int main(int argc, char *argv[])
     // createWindow(800, 600, "OpenGL Window");
     // draw();
 
-   
-
-    return 0;
+       return 0;
 }
