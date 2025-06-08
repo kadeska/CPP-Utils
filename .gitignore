@@ -7,3 +7,4 @@ build/
 
 # Optional: ignore OS-specific files
 
+run-utils.sh
