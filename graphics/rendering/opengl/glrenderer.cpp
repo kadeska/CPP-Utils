@@ -58,7 +58,7 @@ void renderWindow(GLFWwindow *window)
         renderData.ourShader.setMat4("projection", projection);
 
         // do stuff
-        cam.dostuff();
+        cam.dostuff(); // makes cube rotate.
         view = cam.view;
         // Draw the rectangle (two triangles)
         // glDrawElements(GL_POINTS, 6, GL_UNSIGNED_INT, 0);
