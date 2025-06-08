@@ -4,21 +4,11 @@
 #include <cmath>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "worldGenerator_A.hpp"
 
 // #include "window.hpp"
 #include "camera.hpp"
-
-glm::vec3 cubePositions[] = {
-    glm::vec3(0.0f, 0.0f, 0.0f),
-    glm::vec3(1.0f, 1.0f, 1.0f),
-    glm::vec3(2.0f, 2.0f, 2.0f),
-    glm::vec3(3.0f, 3.0f, 3.0f),
-    glm::vec3(2.4f, -0.4f, -3.5f),
-    glm::vec3(-1.7f, 3.0f, -7.5f),
-    glm::vec3(1.3f, -2.0f, -2.5f),
-    glm::vec3(1.5f, 2.0f, -2.5f),
-    glm::vec3(1.5f, 0.2f, -1.5f),
-    glm::vec3(-1.3f, 1.0f, -1.5f)};
+#include "world.hpp"
 
 void renderWindow(GLFWwindow *window)
 {
@@ -33,6 +23,10 @@ void renderWindow(GLFWwindow *window)
     // glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
     // std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes;
     // // -----------------------------------------------------------------------------
+
+    World world = World();
+    worldGenerator_A worldGen = worldGenerator_A();
+    world = worldGen.generateWorld(0, world.WORLD_SIZE, world.WORLD_SIZE, world.WORLD_SIZE);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -49,12 +43,12 @@ void renderWindow(GLFWwindow *window)
         int vertexColorLocation = glGetUniformLocation(renderData.shaderProgram, "ourColor");
         glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
         glBindVertexArray(renderData.VAO);
-        for (unsigned int i = 0; i < 10; i++)
+        for (unsigned int i = 0; i < world.cubePositions.size(); i++)
         {
             glm::mat4 model = glm::mat4(1.0f);
-            model = glm::translate(model, cubePositions[i]);
+            model = glm::translate(model, world.cubePositions[i]);
             float angle = 20.0f * i;
-            model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            // model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
             renderData.ourShader.setMat4("model", model);
 
             glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
@@ -67,7 +61,7 @@ void renderWindow(GLFWwindow *window)
                                                 (float)W_width / (float)W_height,
                                                 0.1f,
                                                 100.0f); // glm::mat4(1.0f);
-        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        // model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
         // projection = glm::perspective(glm::radians(45.0f), (float)W_width / (float)W_height, 0.1f, 100.0f);
         // retrieve the matrix uniform locations
@@ -82,6 +76,7 @@ void renderWindow(GLFWwindow *window)
         // do stuff
         cam.dostuff(); // makes cube rotate.
         view = cam.view;
+
         // Draw the rectangle (two triangles)
         // glDrawElements(GL_POINTS, 6, GL_UNSIGNED_INT, 0);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
