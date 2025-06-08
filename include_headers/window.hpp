@@ -1,3 +1,4 @@
+#pragma once
 #ifndef WINDOW_HPP
 #define WINDOW_HPP
 
@@ -11,5 +12,7 @@ int initialize();
 GLFWwindow *createWindow(int width, int height, std::string name);
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
+
+extern int W_width, W_height;
 
 #endif // WINDOW_HPP

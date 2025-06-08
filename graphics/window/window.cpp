@@ -9,6 +9,9 @@
 // Define the window variable
 GLFWwindow *window = nullptr;
 
+int W_width = 800;  // Default width
+int W_height = 600; // Default height
+
 int initialize()
 {
 
@@ -29,6 +32,8 @@ int initialize()
 
 GLFWwindow *createWindow(int width, int height, std::string name)
 {
+    W_height = height;
+    W_width = width;
     window = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
     if (window == NULL)
     {

@@ -65,6 +65,7 @@ add_executable(Utils
     graphics/window/window.cpp 
     graphics/rendering/opengl/glrenderer.cpp
     graphics/rendering/opengl/program.cpp
+    graphics/rendering/opengl/camera.cpp
     ${GLAD_SRC}
 )
 

@@ -25,16 +25,42 @@ RenderData genShaderProgram()
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
     float vertices[] = {
-        0.5f, 0.5f, 0.0f,   // top right
-        0.5f, -0.5f, 0.0f,  // bottom right
-        -0.5f, -0.5f, 0.0f, // bottom left
-        -0.5f, 0.5f, 0.0f   // top left
+        // 0.5f, 0.5f, 0.0f,   // top right
+        // 0.5f, -0.5f, 0.0f,  // bottom right
+        // -0.5f, -0.5f, 0.0f, // bottom left
+        // -0.5f, 0.5f, 0.0f   // top left
+        -0.5f, -0.5f, -0.5f, // 0
+        0.5f, -0.5f, -0.5f,  // 1
+        0.5f, 0.5f, -0.5f,   // 2
+        -0.5f, 0.5f, -0.5f,  // 3
+        -0.5f, -0.5f, 0.5f,  // 4
+        0.5f, -0.5f, 0.5f,   // 5
+        0.5f, 0.5f, 0.5f,    // 6
+        -0.5f, 0.5f, 0.5f    // 7
+
     };
     unsigned int indices[] = {
         // note that we start from 0!
-        0, 1, 3, // first Triangle
-        1, 2, 3  // second Triangle
-    };
+        // 0, 1, 3, // first Triangle
+        // 1, 2, 3  // second Triangle
+        // back face
+        0, 1, 2,
+        2, 3, 0,
+        // front face
+        4, 5, 6,
+        6, 7, 4,
+        // left face
+        4, 0, 3,
+        3, 7, 4,
+        // right face
+        1, 5, 6,
+        6, 2, 1,
+        // bottom face
+        4, 5, 1,
+        1, 0, 4,
+        // top face
+        3, 2, 6,
+        6, 7, 3};
     // unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &data.VAO);
     glGenBuffers(1, &data.VBO);
