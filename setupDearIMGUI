@@ -1,0 +1,87 @@
+# Using Dear ImGui to Show FPS Overlay in OpenGL
+
+This guide outlines the steps to integrate Dear ImGui into your OpenGL project and display the FPS in the top right corner.
+
+---
+
+## 1. Add Dear ImGui to Your Project
+
+- Download ImGui from [https://github.com/ocornut/imgui](https://github.com/ocornut/imgui).
+- Add the following files to your build:
+  - `imgui.cpp`, `imgui_draw.cpp`, `imgui_tables.cpp`, `imgui_widgets.cpp`, `imgui_demo.cpp`
+  - Backends: `imgui_impl_glfw.cpp`, `imgui_impl_opengl3.cpp`
+- Include the headers in your project.
+
+---
+
+## 2. Initialize ImGui
+
+In your initialization code (after creating your OpenGL context and window):
+
+```cpp
+IMGUI_CHECKVERSION();
+ImGui::CreateContext();
+ImGuiIO& io = ImGui::GetIO(); (void)io;
+ImGui::StyleColorsDark();
+ImGui_ImplGlfw_InitForOpenGL(window, true);
+ImGui_ImplOpenGL3_Init("#version 330");
+```
+
+---
+
+## 3. Start a New ImGui Frame in Your Render Loop
+
+At the beginning of each frame:
+
+```cpp
+ImGui_ImplOpenGL3_NewFrame();
+ImGui_ImplGlfw_NewFrame();
+ImGui::NewFrame();
+```
+
+---
+
+## 4. Show the FPS Overlay
+
+Add this code in your render loop to display the FPS in the top right corner:
+
+```cpp
+ImGui::SetNextWindowPos(ImVec2(W_width - 110, 10), ImGuiCond_Always);
+ImGui::SetNextWindowBgAlpha(0.35f); // Transparent background
+ImGui::Begin("FPS", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_AlwaysAutoResize |
+                           ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings |
+                           ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav);
+ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
+ImGui::End();
+```
+
+---
+
+## 5. Render ImGui
+
+After your normal OpenGL rendering:
+
+```cpp
+ImGui::Render();
+ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+```
+
+---
+
+## 6. Cleanup ImGui on Exit
+
+Before exiting your application:
+
+```cpp
+ImGui_ImplOpenGL3_Shutdown();
+ImGui_ImplGlfw_Shutdown();
+ImGui::DestroyContext();
+```
+
+---
+
+## Notes
+
+- Make sure to link against ImGui and its backends in your build system.
+- You may need to adjust the window position (`W_width - 110`) depending on your window size variable.
+- For more details, see the [ImGui examples](https://github.com/ocornut/imgui/tree/master/examples).
