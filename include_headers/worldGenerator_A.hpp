@@ -10,8 +10,8 @@ public:
     worldGenerator_A();
     World generateWorld(int seed, int width, int height, int depth);
 
-    int index(int x, int y, int z)
+    int index(int x, int y, int z, int width, int height)
     {
-        return x + world.WORLD_SIZE * (y + world.WORLD_SIZE * z);
+        return x + width * (y + height * z);
     }
 };

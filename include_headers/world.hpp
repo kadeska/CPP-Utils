@@ -9,21 +9,12 @@
 class World
 {
 public:
-    int WORLD_SIZE = 4; // Size of the world in each dimension.
+    // Actual world size is WORLD_SIZE^3
+    int WORLD_SIZE = 2; // Size of the world in each dimension.
     std::vector<glm::vec3> cubePositions;
     std::vector<BlockType::BlockTypes> blockTypes;
 
-    World() : cubePositions{
-                  glm::vec3(0.0f, 0.0f, 0.0f),
-                  glm::vec3(1.0f, 1.0f, 0.0f),
-                  glm::vec3(2.0f, 1.0f, 0.0f),
-                  glm::vec3(3.0f, 1.0f, 0.0f),
-                  glm::vec3(4.0f, 1.0f, 0.0f),
-                  glm::vec3(5.0f, 1.0f, 0.0f),
-                  glm::vec3(6.0f, 1.0f, 0.0f),
-                  glm::vec3(7.0f, 1.0f, 0.0f),
-                  glm::vec3(8.0f, 1.0f, 0.0f),
-                  glm::vec3(9.0f, 1.0f, 0.0f)}
+    World()
     {
         log("World constructor called", CustomLogging::LogLevel::DEBUG);
         for (const auto &pos : cubePositions)

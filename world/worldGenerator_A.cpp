@@ -21,6 +21,10 @@ World worldGenerator_A::generateWorld(int seed, int width, int height, int depth
     // Set the world size.
     world.WORLD_SIZE = width + height;
 
+    size_t total = width * height * depth;
+    world.cubePositions.resize(total);
+    world.blockTypes.resize(total);
+
     // Iterate over every coordinate in the 3D space.
     for (int z = 0; z < width; ++z)
     {
@@ -31,7 +35,7 @@ World worldGenerator_A::generateWorld(int seed, int width, int height, int depth
                 // debug log of indexing
                 // helper.log(4, std::string("indexing ( " + std::to_string(x) + ", " + std::to_string(y) + ", " + std::to_string(x)));
                 // Calculate the index for the current coordinates
-                int idx = index(x, y, z);
+                int idx = index(x, y, z, width, height);
 
                 // fill vectors
                 world.cubePositions[idx] = glm::vec3(x, y, z);
