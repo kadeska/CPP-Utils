@@ -19,7 +19,7 @@ World worldGenerator_A::generateWorld(int seed, int width, int height, int depth
     // Create a world object with the specified size.
     world = World();
     // Set the world size.
-    world.WORLD_SIZE = width + height;
+    // world.WORLD_SIZE = width * height * depth;
 
     size_t total = width * height * depth;
     world.cubePositions.resize(total);
