@@ -20,7 +20,7 @@ public:
         for (const auto &pos : cubePositions)
         {
             // For simplicity, we assume all blocks are of type DIRT.
-            blockTypes.push_back(BlockType::BlockTypes::DIRT);
+            // blockTypes.push_back(BlockType::BlockTypes::DIRT);
         }
     }
 

@@ -2,6 +2,8 @@
 #include "include_headers/window.hpp"
 #include "include_headers/glrenderer.hpp"
 
+#include "math.hpp"
+
 int main(int argc, char *argv[])
 {
     CustomLogging::printCommandLineArguments(argc, argv);
@@ -28,5 +30,10 @@ int main(int argc, char *argv[])
     // createWindow(800, 600, "OpenGL Window");
     // draw();
 
-       return 0;
+    // log(std::to_string(getRandomInt(1, 10)), CustomLogging::LogLevel::DEBUG);
+    // log(std::to_string(getRandomInt()), CustomLogging::LogLevel::DEBUG);
+    // srand(99);
+    // log(std::to_string(rand()), CustomLogging::LogLevel::DEBUG);
+
+    return 0;
 }
