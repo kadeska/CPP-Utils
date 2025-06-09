@@ -5,6 +5,7 @@
 
 #include "window.hpp"
 #include "customLogging.hpp"
+#include "camera.hpp"
 
 // Define the window variable
 GLFWwindow *window = nullptr;
@@ -59,8 +60,18 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
     glViewport(0, 0, width, height);
 }
 
-void processInput(GLFWwindow *window)
+void processInput(GLFWwindow *window, Camera &mainCam)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+
+    const float cameraSpeed = 0.05f;
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        mainCam.cameraPos += cameraSpeed * glm::normalize(mainCam.cameraTarget - mainCam.cameraPos);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        mainCam.cameraPos -= cameraSpeed * glm::normalize(mainCam.cameraTarget - mainCam.cameraPos);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        mainCam.cameraPos -= glm::normalize(glm::cross(mainCam.cameraTarget - mainCam.cameraPos, mainCam.up)) * cameraSpeed;
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        mainCam.cameraPos += glm::normalize(glm::cross(mainCam.cameraTarget - mainCam.cameraPos, mainCam.up)) * cameraSpeed;
 }

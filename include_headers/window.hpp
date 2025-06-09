@@ -4,6 +4,7 @@
 
 #include "3rdparty/glad/glad.h"
 #include "3rdparty/glfw/glfw3.h"
+#include "camera.hpp"
 #include <string>
 
 extern GLFWwindow *window;
@@ -11,7 +12,7 @@ extern GLFWwindow *window;
 int initialize();
 GLFWwindow *createWindow(int width, int height, std::string name);
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
-void processInput(GLFWwindow *window);
+void processInput(GLFWwindow *window, Camera &mainCam);
 
 extern int W_width, W_height;
 

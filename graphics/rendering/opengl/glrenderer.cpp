@@ -15,7 +15,7 @@ void renderWindow(GLFWwindow *window)
     // Generate shader program and get VAO/VBO handles
     RenderData renderData = genShaderProgram();
 
-    camera cam = camera();
+    Camera cam = Camera();
 
     // // -----------------------------------------------------------------------------
     // // checking GL_MAX_VERTEX_ATTRIBS
@@ -30,7 +30,8 @@ void renderWindow(GLFWwindow *window)
 
     while (!glfwWindowShouldClose(window))
     {
-        processInput(window);
+        processInput(window, cam);
+        cam.view = glm::lookAt(cam.cameraPos, cam.cameraTarget, cam.up);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -74,7 +75,8 @@ void renderWindow(GLFWwindow *window)
         renderData.ourShader.setMat4("projection", projection);
 
         // do stuff
-        cam.dostuff(); // makes cube rotate.
+        // cam.dostuff(); // makes cube rotate.
+        // cam.processInput(window);
         view = cam.view;
 
         // Draw the rectangle (two triangles)
