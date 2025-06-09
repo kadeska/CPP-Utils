@@ -62,6 +62,9 @@ target_include_directories(Utils PRIVATE
     ${CMAKE_SOURCE_DIR}
 )
 
+# Find OpenGL package
+find_package(OpenGL REQUIRED)
+
 # Link against required libraries
 target_link_libraries(Utils PRIVATE 
     OpenGL::GL 
